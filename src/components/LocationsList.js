@@ -10,7 +10,6 @@ export default function LocationsList() {
     axios.get('https://rickandmortyapi.com/api/location/')
         .then(res => {
           setContent(res.data);
-          console.log(res);
         });
   }, []); // no dependencies needed
 
@@ -18,7 +17,7 @@ export default function LocationsList() {
 
   return(
       <section className='location-list grid-view'>
-        {content.results.map(l => <LocationCard location={l} />)}
+        {content.results.map(l => <LocationCard key={l.name} location={l} />)}
       </section>
   );
 }
