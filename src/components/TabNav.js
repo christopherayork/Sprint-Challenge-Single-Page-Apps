@@ -12,16 +12,18 @@ const Nav = props => (
 	/>
 );
 
-const createLabel = (iconName, labelText) => <span><Icon name={iconName} />{labelText}</span>
+const createLabel = (iconName, labelText) => <span><Icon name={iconName} />{labelText}</span>;
 
-const welcomeLabel = createLabel("home", "Home Page")
-const characterLabel = createLabel("users", "Characters")
+const welcomeLabel = createLabel("home", "Home Page");
+const characterLabel = createLabel("users", "Characters");
+const locationLabel = createLabel('users', 'Locations');
 
 const panes = [
   { menuItem: <Menu.Item key='home' as={Nav} to={`/`} content={welcomeLabel} /> },
-  { menuItem: <Menu.Item key='characters' as={Nav} to={`/characters`} content={characterLabel} /> }
-]
+  { menuItem: <Menu.Item key='characters' as={Nav} to={`/characters`} content={characterLabel} /> },
+	{ menuItem: <Menu.Item key='locations' as={Nav} to={`/locations`} content={locationLabel} /> }
+];
 
-const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
+const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />;
 
 export default TabNav
